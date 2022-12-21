@@ -1,4 +1,4 @@
-"""Claentwomistar URL Configuration
+"""JustCats URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Principal.views import index,Inicio,RegisterView,LoginView,LogoutView,perfil
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='Index'),
+    path('Inicio/', Inicio, name='Inicio'),
+    path('Perfil/', perfil,name='perfil'),
+    path('Register/',RegisterView.as_view(), name='Register'),
+    path('Login/', LoginView.as_view(), name='Login'),
+    path('logout/', LogoutView,name='Logout'),
 ]
