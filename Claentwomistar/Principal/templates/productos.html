@@ -37,7 +37,11 @@
                         <p class="info-precio">${{producto.Valor}}</p>
                         
                     </div>
-                    <button class="btnComprar">Comprar ahora</button>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden", value="{{producto.id}}" name="producto">
+                        <button class="btnComprar" type="submit">Comprar ahora</button>
+                    </form>
                 </div>
             </div>
             {% endfor %}

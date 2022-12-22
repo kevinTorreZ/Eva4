@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.views.generic import CreateView, FormView
 from Principal.models import Usuario
-from Administracion.models import Productos
+from datetime import date
+from Administracion.models import Productos,Ventas
 from django.contrib.auth import authenticate, login,logout
 from Principal.forms import RegisterForm,LoginForm,ChangeDataUser
 from django.contrib.auth.decorators import login_required
@@ -42,6 +43,16 @@ def index(request):
     return render(request,"index.html")
 def productos(request):
     allproductos = Productos.objects.all()
+    if request.method == "POST":
+        now = date.today()
+        producto = request.POST["producto"]
+        getProducte = Productos.objects.get(id=producto)
+        generarVenta = Ventas(Fecha=now,Cantidad=1,Producto=getProducte)
+        generarVenta.save()
+        getProducte.Stock = int(getProducte.Stock) - 1
+        getProducte.Ventas = int(getProducte.Ventas) + 1
+        getProducte.save()
+
     return render(request,"productos.html",{'productos':allproductos})
 @login_required()
 def Inicio(request):

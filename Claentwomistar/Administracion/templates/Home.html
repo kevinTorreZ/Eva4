@@ -1,3 +1,4 @@
+{% if user.admin %}
 <h2 id="Titulo">Gestionar usuarios</h2>
     <div class="Container">
         <table class="table">
@@ -42,4 +43,20 @@
             {% endfor %}
             </tbody>
           </table>
+          <h1>Producto Maximo vendido</h1>
+          {{MaxVentas.Modelo}}
+          <h1>Productos al stock limite</h1>
+          {% for a in limitStock %}
+                {{a.Stock}}
+          {% endfor %}
+          <h1>Ventas realizadas hoy</h1>
+          {% for nashe in VentasToday %}
+            id: {{nashe.id}}
+            Producto: {{nashe.Producto.Modelo}}
+            Cantidad: {{nashe.Cantidad}}
+            Fecha: {{nashe.Fecha}}
+          {% endfor %}
     </div>
+{% else %}
+    <script> window.location.href = '/Inicio/' </script> 
+{% endif %}
