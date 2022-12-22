@@ -47,16 +47,17 @@ nav{
 }
 
 .card-producto{
-    width: 255px;
+    width: 100%;
     height: 460px;
     border: 1px solid #c4c4c4;
-    border-radius: 10px;
+    border-radius: 16px;
     margin-top: 40px;
     text-align: center;
     background-color: white;
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: left;
     background-clip: border-box;
 }
 
@@ -74,4 +75,57 @@ nav{
     border-bottom-right-radius: 16px;
     z-index: 1;
     padding-top: 47px;
+    height: 203px;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.capsula{
+    font-size: 14px;
+    line-height: 20px;
+    position: absolute;
+    top: -9px;
+    margin-left: 15px;
+}
+
+.capsula span{
+    color: #fff;
+    background-color: #fd6c98;
+    padding: 0 8px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+}
+
+.info-marca{
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Fira Sans', sans-serif;
+    color: #191919;
+    margin-bottom: 0;
+    text-align: left!important;
+}
+
+.info-equipo{
+    font-size: 16px;
+    line-height: 20px;
+    color: #191919;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: left!important;
+}
+
+.card-header{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 255px;
+    background-color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
