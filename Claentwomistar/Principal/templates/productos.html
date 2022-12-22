@@ -25,15 +25,15 @@
             {% if producto.Marca == 'Apple'%}
             <div class="card-producto">
                 <div class="card-header">
-                    <img src="../../static/Circulo.png">
-                    <img src="../../{{producto.photo}}">
+                    <img src="..{{producto.photo.url}}">
                 </div>
                 <div class="card-body">
 
                 </div>
+            </div>
                 {% endif %}
                 {% endfor %}
-            </div>
+           
         </div>
     </div>
     {% endblock %}
