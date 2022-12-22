@@ -22,6 +22,9 @@
                     <li class="main-section"> 
                         <a href="/">Inicio</a>
                         <a href="/Productos/">Productos</a>
+                        {% if user.admin %}
+                        <a href="/admin/">Admin</a>
+                        {% endif %}
                     </li>
                     <li class="nav-login">
                         <a href="/Perfil/"><i class="fa-solid fa-user"></i>Perfil</a>
