@@ -192,6 +192,7 @@
     font-size: 14px;
     max-width: 160px;
     width: 100%;
+    cursor: pointer;
 }
 
 .plan{
@@ -239,6 +240,7 @@
 }
 
 .productos-body a{
+    cursor: pointer;
     position: relative;
     width: 100%;
     display: flex;
@@ -271,4 +273,149 @@ span{
 #ofertas{
     color: #019df4;
     font-size: 14px;
+}
+
+.renueva-box{
+    max-width: 1200px;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    padding-left: 35px;
+}
+
+.title-renueva h3{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: normal;
+    font-size: 23px;
+}
+
+.renueva-card{
+    margin-top: 25px;
+    max-width: 1130px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.card-celular:hover{
+    box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+    transition: all .3s ease-in-out;
+    margin-top: -6px;
+}
+
+.card-celular:hover .imagen-celular{
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+
+.imagen-celular{
+    transition: all .3s ease-in-out;
+}
+
+.card-celular{
+    cursor: pointer;
+    width: 255px;
+    height: 389px;
+    background-color: #fff;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.card-celular img{
+    width: 98px;
+    height: 190px;
+    display: flex;
+    align-self: center;
+    
+}
+
+.texto-renueva{
+    height: 136px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    position: relative;
+}
+
+.marca-modelo{
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.marca-modelo p{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.1;
+    margin-bottom: 0;
+    color: #191919;
+    text-align: left!important;
+}
+
+#modelo{
+    font-size: 16px;
+    height: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.box-cuotas{
+    height: auto;
+}
+
+.box-cuotas p{
+    color: #636467;
+    font-size: 12px;
+    line-height: .9;
+    margin-bottom: 0;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.precio-equipos{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 26px;
+    color: #ff3d00;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.precio-oferta{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #636467;
+}
+
+.tarjeta-descuentos{
+    width: 78px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    right: 3%;
+    bottom: 28%;
+    background-color: #42e8b4;
+    border-radius: 4px;
+    color: #191919;
+    position: absolute;
+}
+
+.tarjeta-descuentos p{
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    font-weight: bold;
 }
