@@ -16,6 +16,7 @@
     {% block content %}
         {% for producto in productos %}
             {% if producto.DetalleProductos.Marca == 'Samsung'%}
+            <div>
                 <div class="card-celular">
                     <img class="imagen-celular" src="../static/img/moto-g51.png">
                     <div class="texto-renueva">
@@ -33,8 +34,8 @@
                         <p class="precio-oferta"><strong>Precio oferta: </strong>$149.760</p>
                     </div>
                 </div>
+            </div>
             {% endif %}
-            <h1>Hola</h1>
         {% endfor %}
     {% endblock %}
 </body>

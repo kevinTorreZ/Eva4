@@ -1,7 +1,7 @@
 {% extends "Componentes/header.html" %}
 {% load static %}
 {% block links%}
-<link rel="stylesheet" href="{% static 'inicio.css' %}">
+<link rel="stylesheet" href="{% static 'index.css' %}">
 {% endblock %}
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,168 @@
 </head>
 <body>
     {% block content %}
-
+    <div class="header-info">
+        <a><i class="fa-solid fa-cart-shopping"></i>¡Apertura de pagina! aprovecha nuestros super descuentos</a>
+    </div>
+    <div class="header-img"></div>
+    <div class="portate">
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Portate a ClaEntWomIstar</a>
+        </div>
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Renueva tu equipo</a>
+        </div>
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Paga tu cuenta</a>
+        </div>
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Recarga facil</a>
+        </div>
+        <div class="portate-box ultimo">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Beneficios de ClaEntWomIstar</a>
+        </div>
+    </div>
+    <div class="box-movistar">
+        <div class="card-productos">
+            <img height="100px" width="150px" src="../static/img/destacado-internet-tv.png">
+            <a>Fibra 400 megas + TV</a>
+            <div class="box-ofertas">
+                <div class="box-1">
+                    <a>35% dcto.</a>
+                </div>
+                <div class="box-2">
+                    <a>Oferta navidad</a>
+                </div>
+            </div>
+            <div class="box-price">
+                <a id="price">$25.344</a>
+                <a id="price-desc">al mes <br> por un año</a>
+            </div>
+            <a id="card-desc">Luego $38.990 mes</a>
+            <button class="btnOferta">Ver oferta</button>
+        </div>
+        <div class="card-productos">
+            <img id="plan5g" height="100px" width="150px" src="../static/img/destacado-portabilidad.png">
+            <a>Plan 5G Libre Pro</a>
+            <div class="box-ofertas">
+                <div class="box-1 plan">
+                    <a>Oferta Navidad 30% dcto.</a>
+                </div>
+            </div>
+            <div class="box-price">
+                <a id="price">$11.193</a>
+                <a id="price-desc">al mes <br> por un año</a>
+            </div>
+            <a id="card-desc">Luego $15.990 al mes</a>
+            <button class="btnOferta">Contratar</button>
+        </div>
+        <div class="card-productos">
+            <img id="plan5g" height="100" width="150" src="../static/img/destacado-iphone-11.png">
+            <a>Apple iPhone 11 64GB</a>
+            <div class="box-ofertas">
+                <div class="box-1">
+                    <a>24% dcto.</a>
+                </div>
+            </div>
+            <div class="box-price">
+                <a id="price">$419.990</a>
+            </div>
+            <a id="card-desc">o hasta 24 cuotas de $17.500 al mes</a>
+            <button class="btnOferta">Renovar ahora</button>
+        </div>
+        <div class="card-productos-largo">
+            <h3>SIGUE DONDE LO DEJASTE</h3>
+            <div class="productos-body">
+                <a><img src="../static/img/planes_2x1-h.png">
+                    <p><span>Planes 2x1</span>con 5G de ultra velocidad</p>
+                </a>
+                <a><img src="../static/img/ofertas_renovacion-h.png">
+                    <p><span>Renueva tu equipo</span>en 24 cuotas sin interés con tarjeta de crédito</p>
+                </a>
+                <a><img src="../static/img/AppleiPhone11.png">
+                    <p><span>Equipos liberados</span>Aprovecha increíbles descuentos</p>
+                </a>
+                <a>
+                    <p id="ofertas">VER MÁS OFERTAS</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="renueva-box">
+        <div class="title-renueva">
+            <h3>Renueva tu equipo</h3>
+        </div>
+        <div class="renueva-card">
+            <div class="card-celular">
+                <img class="imagen-celular" src="../static/img/xiaomi-redmi-10a-nueva.png">
+                <div class="texto-renueva">
+                    <div class="marca-modelo">
+                        <p>Xiaomi</p>
+                        <p id="modelo">Redmi 10A 32GB</p>
+                    </div>
+                    <div class="box-cuotas">
+                        <p>En 24 coutas sin interés</p>
+                    </div>
+                    <p class="precio-equipos">$4.990</p>
+                    <div class="tarjeta-descuentos">
+                        <p>17% dcto.</p>
+                    </div>
+                    <p class="precio-oferta"><strong>Precio oferta: </strong>$119.760</p>
+                </div>
+            </div>
+            <div class="card-celular">
+                <img class="imagen-celular" src="../static/img/moto-g51.png">
+                <div class="texto-renueva">
+                    <div class="marca-modelo">
+                        <p>Motorola</p>
+                        <p id="modelo">G51 5G 128GB</p>
+                    </div>
+                    <div class="box-cuotas">
+                        <p>En 24 coutas sin interés</p>
+                    </div>
+                    <p class="precio-equipos">$6.240</p>
+                    <div class="tarjeta-descuentos">
+                        <p>60% dcto.</p>
+                    </div>
+                    <p class="precio-oferta"><strong>Precio oferta: </strong>$149.760</p>
+                </div>
+            </div>
+            <div class="card-celular">
+                <img class="imagen-celular" src="../static/img/iphone-11-64.png">
+                <div class="texto-renueva">
+                    <div class="marca-modelo">
+                        <p>Apple</p>
+                        <p id="modelo">iPhone 11 64GB</p>
+                    </div>
+                    <div class="box-cuotas">
+                        <p>En 24 coutas sin interés</p>
+                    </div>
+                    <p class="precio-equipos">$18.490</p>
+                    <div class="tarjeta-descuentos">
+                        <p>33% dcto.</p>
+                    </div>
+                    <p class="precio-oferta"><strong>Precio oferta: </strong>$443.760</p>
+                </div>
+            </div>
+            <div class="card-celular">
+                <img class="imagen-celular" src="../static/img/iphone-14.png">
+                <div class="texto-renueva">
+                    <div class="marca-modelo">
+                        <p>Apple</p>
+                        <p id="modelo">iPhone 14 Pro 128GB</p>
+                    </div>
+                    <div class="box-cuotas">
+                        <p>En 24 coutas sin interés</p>
+                    </div>
+                    <p class="precio-equipos">$49.990</p>
+                    <div class="tarjeta-descuentos">
+                        <p>6% dcto.</p>
+                    </div>
+                    <p class="precio-oferta"><strong>Precio oferta: </strong>$1.199.760</p>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endblock %}
 </body>
 
