@@ -14,3 +14,10 @@ class Productos(models.Model):
         return str(self.id)+" "+self.Nombre
     def filename(self):
         return os.path.basename(self.photo.name)
+class Ventas(models.Model):
+    id = models.AutoField(primary_key=True)
+    Fecha = models.DateField()
+    Cantidad = models.IntegerField()
+    Producto = models.ForeignKey(Productos, on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.id)

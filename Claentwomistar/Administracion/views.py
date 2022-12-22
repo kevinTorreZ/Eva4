@@ -1,13 +1,14 @@
 from django.shortcuts import render,redirect
 from .serializers import ProductosSerializer
-from .models import Productos
+from .models import Productos,Ventas
+from datetime import date
 from Principal.models import Usuario
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 
-
+@login_required()
 @api_view(['GET', 'POST'])
 def products_list(request):
     if request.method == "GET":
@@ -23,11 +24,10 @@ def products_list(request):
         return Response(serializer.errors,
                         status=status.HTTP_400_BAD_REQUEST)
 
-
+@login_required()
 @api_view(['GET', 'PUT', 'DELETE'])
 def producto_detalle(request, pk):
     getproducto = Productos.objects.get(id=pk)
-    getproducto.DoesNoe
     if request.method == 'GET':
         serializer = ProductosSerializer(getproducto)
         return Response(serializer.data)
@@ -71,7 +71,20 @@ def EliminarUsuario(request,idUser):
     return redirect('/admin/')
 @login_required()
 def HomeAdmin(request):
+    now = date.today()
     Usuarios = Usuario.objects.all()
+    Allproductos = Productos.objects.all()
+    ventes = Ventas.objects.filter(Fecha=now)
+    maxVentas = 0
+    idProducto = 0
+    lista = []
+    for i in Allproductos:
+        if int(i.Ventas) > maxVentas: 
+            maxVentas = int(i.Ventas)
+            idProducto = i.id
+        if i.Stock <= 10:
+            lista.append(i)
+    productoMaxVentas = Productos.objects.get(id=idProducto)
     if request.method == "POST":
         user = request.POST.get('Userid', False)
         activo = request.POST.get('activo', False)
@@ -89,4 +102,4 @@ def HomeAdmin(request):
         userchange.tecnico = tecnico
         userchange.save()
         return redirect('/admin/')
-    return render(request, "Home.html",{"Usuarios":Usuarios})
+    return render(request, "Home.html",{"Usuarios":Usuarios,"MaxVentas":productoMaxVentas,"limitStock":lista,"VentasToday":ventes})
