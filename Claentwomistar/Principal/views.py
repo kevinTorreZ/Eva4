@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.views.generic import CreateView, FormView
 from Principal.models import Usuario
+from Administracion.models import Productos
 from django.contrib.auth import authenticate, login,logout
 from Principal.forms import RegisterForm,LoginForm,ChangeDataUser
 from django.contrib.auth.decorators import login_required
@@ -39,6 +40,9 @@ class LoginView(FormView):
         return super(LoginView, self).form_invalid(form)
 def index(request):
     return render(request,"index.html")
+def productos(request):
+    allproductos = Productos.objects.all()
+    return render(request,"productos.html",{'productos':allproductos})
 @login_required()
 def Inicio(request):
     return render(request,"inicio.html",)

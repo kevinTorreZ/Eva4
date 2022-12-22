@@ -1,0 +1,42 @@
+{% extends "Componentes/header.html" %}
+{% load static %}
+{% block links%}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    {% block content %}
+        {% for producto in productos %}
+            {% if producto.DetalleProductos.Marca == 'Samsung'%}
+                <div class="card-celular">
+                    <img class="imagen-celular" src="../static/img/moto-g51.png">
+                    <div class="texto-renueva">
+                        <div class="marca-modelo">
+                            <p>Motorola</p>
+                            <p id="modelo">{{producto.Nombre}}</p>
+                        </div>
+                        <div class="box-cuotas">
+                            <p>En 24 coutas sin interés</p>
+                        </div>
+                        <p class="precio-equipos">${{producto.Valor}}</p>
+                        <div class="tarjeta-descuentos">
+                            <p>60% dcto.</p>
+                        </div>
+                        <p class="precio-oferta"><strong>Precio oferta: </strong>$149.760</p>
+                    </div>
+                </div>
+            {% endif %}
+            <h1>Hola</h1>
+        {% endfor %}
+    {% endblock %}
+</body>
+
+</html>
