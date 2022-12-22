@@ -44,6 +44,7 @@ nav{
     grid-gap: 20px;
     align-items: center;
     padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 .card-producto{
@@ -51,7 +52,6 @@ nav{
     height: 460px;
     border: 1px solid #c4c4c4;
     border-radius: 16px;
-    margin-top: 40px;
     text-align: center;
     background-color: white;
     position: relative;
@@ -74,11 +74,9 @@ nav{
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     z-index: 1;
-    padding-top: 47px;
     height: 203px;
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 1.25rem;
 }
 
 .capsula{
@@ -103,6 +101,8 @@ nav{
 }
 
 .info-marca{
+    margin-top: 30px;
+    margin-left: 20px;
     font-size: 14px;
     line-height: 16px;
     font-family: 'Fira Sans', sans-serif;
@@ -114,6 +114,7 @@ nav{
 .info-equipo{
     font-size: 16px;
     line-height: 20px;
+    margin-left: 20px;
     color: #191919;
     margin-bottom: 0;
     font-weight: bold;
@@ -128,4 +129,43 @@ nav{
     background-color: #fff;
     padding: 0.75rem 1.25rem;
     border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.sub-precio{
+    margin-left: 20px;
+    color: #636467;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: left!important;
+    font-size: 14px;
+}
+
+.info-precio{
+    margin-top: 20px;
+    font-size: 32px;
+    line-height: 32px;
+    margin-left: 20px;
+    color: #ff3d00;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: left!important;
+    font-weight: bold;
+}
+
+.btnComprar{
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    font-family: 'Fira Sans', sans-serif;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    background-color: #002EFF;
+}
+
+.stock{
+    margin-left: 20px;
+    color: #636467;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: left!important;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
