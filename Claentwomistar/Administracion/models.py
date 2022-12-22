@@ -3,7 +3,7 @@ import os
 class Productos(models.Model):
     id = models.AutoField(primary_key=True)
     Nombre = models.CharField(max_length=50)
-    Valor = models.IntegerField()
+    Valor = models.CharField(max_length=50)
     Stock = models.IntegerField()
     photo = models.ImageField(upload_to = 'Principal/static/imgProductos',unique=False, height_field = None, width_field = None, max_length = 100, help_text = None)
     Ventas = models.IntegerField(default=0)
