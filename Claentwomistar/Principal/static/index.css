@@ -90,7 +90,7 @@
     flex-direction: column;
     align-items: center;
     margin-left: 10px;
-    box-shadow: 0px 0px 6px 0.3px gray;
+    box-shadow: 0px 0px 3px 0.3px gray;
 }
 
 .card-productos img{
@@ -153,18 +153,6 @@
     height: 100px!important;
 }
 
-.card-productos-largo{
-    width: 322px;
-    height: 332px;
-    border-radius: 10px;
-    border: 1px solid #e8e8e8;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
-    box-shadow: 0px 0px 6px 0.3px gray;
-}
-
 .box-price{
     height: auto;
     width: 230px;
@@ -210,4 +198,77 @@
     width: auto!important;
     padding-left: 2px;
     padding-right: 2px;
+}
+
+.card-productos-largo{
+    width: 322px;
+    height: 332px;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    box-shadow: 0px 0px 3px 0.3px gray;
+}
+
+.card-productos-largo h3{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Fira Sans', sans-serif;
+    color: #222;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.productos-body{
+    padding: 0 10px;
+    position: relative;
+    width: 100%;
+    font-family: 'Fira Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.productos-body img{
+    font-size: 6px;
+    color: #b6b7b7;
+    max-width: 30px;
+    height: auto;
+    width: 100%;
+}
+
+.productos-body a{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #f2f2f2;
+}
+
+.productos-body p{
+    position: relative;
+    width: calc(100% - 35px);
+    padding: 3px 15px 3px 10px;
+    font-size: 13px;
+    color: #313235;
+}
+
+span{
+    vertical-align: unset;
+}
+
+.productos-body span{
+    font-size: 14px;
+    color: #019df4;
+    width: 100%;
+    display: block;
+    margin: 3px 0;
+}
+
+#ofertas{
+    color: #019df4;
+    font-size: 14px;
 }
