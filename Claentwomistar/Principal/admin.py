@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Administracion.models import Productos,DetalleProductos
+from Administracion.models import Productos
 # Register your models here.
 class ProductosAdmin(admin.ModelAdmin):
     list_display = ['id', 'Nombre']
@@ -9,13 +9,4 @@ class ProductosAdmin(admin.ModelAdmin):
                 'fields': ('Valor','Stock','Ventas')}
             ),
         )
-class DetalleProductosAdmin(admin.ModelAdmin):
-    list_display = ['id', 'Marca']
-    add_fieldsets = (
-            (None, {
-                'classes': ('wide',),
-                'fields': ('Marca', 'Descripcion','Modelo')}
-            ),
-        )
 admin.site.register(Productos, ProductosAdmin)
-admin.site.register(DetalleProductos, DetalleProductosAdmin)
