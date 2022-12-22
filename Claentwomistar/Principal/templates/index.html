@@ -18,6 +18,79 @@
     {% if user.is_authenticated %}
     <script> window.location.href = '/Inicio/' </script>
     {% else %}
+    <div class="header-info">
+        <a><i class="fa-solid fa-cart-shopping"></i>¡Apertura de pagina! aprovecha nuestros super descuentos</a>
+    </div>
+    <div class="header-img"></div>
+    <div class="portate">
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Portate a ClaEntWomIstar</a>
+        </div>
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Renueva tu equipo</a>
+        </div>
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Paga tu cuenta</a>
+        </div>
+        <div class="portate-box">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Recarga facil</a>
+        </div>
+        <div class="portate-box ultimo">
+            <a><i class="fa-solid fa-mobile-screen icons-box"></i>Beneficios de ClaEntWomIstar</a>
+        </div>
+    </div>
+    <div class="box-movistar">
+        <div class="card-productos">
+            <img height="100px" width="150px" src="../static/img/destacado-internet-tv.png">
+            <a>Fibra 400 megas + TV</a>
+            <div class="box-ofertas">
+                <div class="box-1">
+                    <a>35% dcto.</a>
+                </div>
+                <div class="box-2">
+                    <a>Oferta navidad</a>
+                </div>
+            </div>
+            <div class="box-price">
+                <a id="price">$25.344</a>
+                <a id="price-desc">al mes <br> por un año</a>
+            </div>
+            <a id="card-desc">Luego $38.990 mes</a>
+            <button class="btnOferta">Ver oferta</button>
+        </div>
+        <div class="card-productos">
+            <img id="plan5g" height="100px" width="150px" src="../static/img/destacado-portabilidad.png">
+            <a>Plan 5G Libre Pro</a>
+            <div class="box-ofertas">
+                <div class="box-1 plan">
+                    <a>Oferta Navidad 30% dcto.</a>
+                </div>
+            </div>
+            <div class="box-price">
+                <a id="price">$11.193</a>
+                <a id="price-desc">al mes <br> por un año</a>
+            </div>
+            <a id="card-desc">Luego $15.990 al mes</a>
+            <button class="btnOferta">Contratar</button>
+        </div>
+        <div class="card-productos">
+            <img id="plan5g" height="100" width="150" src="../static/img/destacado-iphone-11.png">
+            <a>Apple iPhone 11 64GB</a>
+            <div class="box-ofertas">
+                <div class="box-1">
+                    <a>24% dcto.</a>
+                </div>
+            </div>
+            <div class="box-price">
+                <a id="price">$419.990</a>
+            </div>
+            <a id="card-desc">o hasta 24 cuotas de $17.500 al mes</a>
+            <button class="btnOferta">Ver oferta</button>
+        </div>
+        <div class="card-productos-largo">
+
+        </div>
+    </div>
     {% endif %}
     {% endblock %}
 </body>
