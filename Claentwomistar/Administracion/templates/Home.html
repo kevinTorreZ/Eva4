@@ -1,9 +1,15 @@
+{% extends "Componentes/header.html" %}
+{% load static %}
+{% block links%}
+<link rel="stylesheet" href="{% static 'admin.css' %}">
+{% endblock %}
 {% if user.admin %}
+{% block content %}
 <h2 id="Titulo">Gestionar usuarios</h2>
-    <div class="Container">
-        <table class="table">
-            <thead>
-              <tr>
+<div class="Container">
+    <table class="table">
+        <thead>
+            <tr>
                 <th scope="col">id</th>
                 <th scope="col">Usuario</th>
                 <th scope="col">Correo</th>
@@ -12,51 +18,74 @@
                 <th scope="col">Ultima Conexión</th>
                 <th scope="col"></th>
                 <th></th>
-              </tr>
-            </thead>
-            <tbody>
+            </tr>
+        </thead>
+        <tbody>
             {% for Usuario in Usuarios %}
-                <form method="post">
-                    {% csrf_token %}
-                    <tr>
-                        <th scope="row">{{ Usuario.id }}</th>
-                        <td>{{ Usuario.username }}</td>
-                        <td>{{ Usuario.email }}</td>
-                        {% if Usuario.activo %}
-                            <td><input type="checkbox" checked name="activo"/></td>
-                        {% else %}
-                            <td><input type="checkbox" name="activo"/></td>
-                        {% endif %}
-                        {% if Usuario.admin %}
-                            <td><input type="checkbox" checked name="admin"/></td>
-                        {% else %}
-                            <td><input type="checkbox" name="admin"/></td>
-                        {% endif %}
-                        <td>{{ Usuario.last_login }}</td>
-                        <input type="hidden" value="{{ Usuario.id }}" name="Userid">
-                        <input type="hidden" value="Falasdsse" name="Elimnar_user" id="Elimnar_user">
-                        <td><button id="btnModif" type="submit"><i class="fa-solid fa-pen"></i></button></td>
-                        <td><a href="/EliminarUsuario/{{ Usuario.id }}" onclick="return confirm('¿Estas seguro de eliminar el usuario?')">Eliminar</a></td>
-                        
-                    </tr>
-                </form>
+            <form method="post">
+                {% csrf_token %}
+                <tr>
+                    <th scope="row">{{ Usuario.id }}</th>
+                    <td>{{ Usuario.username }}</td>
+                    <td>{{ Usuario.email }}</td>
+                    {% if Usuario.activo %}
+                    <td><input type="checkbox" checked name="activo" /></td>
+                    {% else %}
+                    <td><input type="checkbox" name="activo" /></td>
+                    {% endif %}
+                    {% if Usuario.admin %}
+                    <td><input type="checkbox" checked name="admin" /></td>
+                    {% else %}
+                    <td><input type="checkbox" name="admin" /></td>
+                    {% endif %}
+                    <td>{{ Usuario.last_login }}</td>
+                    <input type="hidden" value="{{ Usuario.id }}" name="Userid">
+                    <input type="hidden" value="Falasdsse" name="Elimnar_user" id="Elimnar_user">
+                    <td><button id="btnModif" type="submit"><i class="fa-solid fa-pen"></i></button></td>
+                    <td><a href="/EliminarUsuario/{{ Usuario.id }}"
+                            onclick="return confirm('¿Estas seguro de eliminar el usuario?')"><i
+                                class="fa-solid fa-user-xmark"></i></a></td>
+                </tr>
+            </form>
             {% endfor %}
-            </tbody>
-          </table>
-          <h1>Producto Maximo vendido</h1>
-          {{MaxVentas.Modelo}}
-          <h1>Productos al stock limite</h1>
-          {% for a in limitStock %}
-                {{a.Stock}}
-          {% endfor %}
-          <h1>Ventas realizadas hoy</h1>
-          {% for nashe in VentasToday %}
-            id: {{nashe.id}}
-            Producto: {{nashe.Producto.Modelo}}
-            Cantidad: {{nashe.Cantidad}}
-            Fecha: {{nashe.Fecha}}
-          {% endfor %}
+        </tbody>
+    </table>
+    <div class="container-productos">
+        <div class="producto-vendido">
+            <h2 id="Titulo-productos">Producto más vendido</h2>
+            <h3>{{MaxVentas.Modelo}}</h3>
+        </div>
+        <div class="producto-stock">
+            <h2 id="Titulo-productos" class="titulo-stock">Productos con stock al limite</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Stock</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in limitStock %}
+                    <tr>
+                        <th>{{a.Modelo}}</th>
+                        <th>{{a.Stock}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
+    <h2 id="Titulo">Ventas realizadas hoy</h2>
+    {% for nashe in VentasToday %}
+    id: {{nashe.id}}
+    Producto: {{nashe.Producto.Modelo}}
+    Cantidad: {{nashe.Cantidad}}
+    Fecha: {{nashe.Fecha}}
+    {% endfor %}
+</div>
+{% endblock %}
 {% else %}
-    <script> window.location.href = '/Inicio/' </script> 
+<script> window.location.href = '/Inicio/' </script>
+
 {% endif %}
