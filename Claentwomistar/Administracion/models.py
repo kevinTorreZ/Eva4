@@ -5,7 +5,7 @@ class Productos(models.Model):
     Nombre = models.CharField(max_length=50)
     Valor = models.IntegerField()
     Stock = models.IntegerField()
-    photo = models.ImageField(upload_to = 'static',unique=False, height_field = None, width_field = None, max_length = 100, help_text = None)
+    photo = models.ImageField(upload_to = 'Principal/static',unique=False, height_field = None, width_field = None, max_length = 100, help_text = None)
     Ventas = models.IntegerField(default=0)
     Marca = models.CharField(max_length=25)
     Descripcion = models.TextField(max_length=250)
