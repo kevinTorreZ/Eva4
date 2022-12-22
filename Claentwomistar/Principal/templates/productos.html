@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
 </head>
+
 <body>
     {% block content %}
     <div class="header-img"></div>
@@ -20,23 +21,21 @@
     </div>
     <div class="main-productos">
         <div class="card-container">
+            {% for producto in productos %}
+            {% if producto.Marca == 'Apple'%}
             <div class="card-producto">
                 <div class="card-header">
-                    <img src="../static/img/redmi10-2022-sea-blue-01_121x246.png"> 
+                    <img src="../../static/Circulo.png">
+                    <img src="../../{{producto.photo}}">
                 </div>
-                 <div class="card-body">
- 
-                 </div>
-             </div>
+                <div class="card-body">
+
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-        {% for producto in productos %}
-            {% if producto.Marca == 'Apple'%}
-            
-            {% endif %}
-        {% endfor %}
-   
-    
+    </div>
     {% endblock %}
 </body>
 
