@@ -158,3 +158,8 @@ blockquote {
 #font-invisible{
     color: transparent;
 }
+
+.tabla-ventas{
+    color: #6F1A7E!important;
+    margin-bottom: 100px;
+}

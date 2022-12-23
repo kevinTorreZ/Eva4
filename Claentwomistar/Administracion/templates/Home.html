@@ -76,13 +76,29 @@
             </table>
         </div>
     </div>
-    <h2 id="Titulo">Ventas realizadas hoy</h2>
-    {% for nashe in VentasToday %}
-    id: {{nashe.id}}
-    Producto: {{nashe.Producto.Modelo}}
-    Cantidad: {{nashe.Cantidad}}
-    Fecha: {{nashe.Fecha}}
-    {% endfor %}
+    <div class="tabla-ventas">
+        <h2 id="Titulo">Ventas realizadas hoy</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nashe in VentasToday %}
+                <tr>
+                    <th>{{nashe.id}}</th>
+                    <th>{{nashe.Producto.Modelo}}</th>
+                    <th>{{nashe.Cantidad}}</th>
+                    <th>{{nashe.Fecha}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
 {% else %}
